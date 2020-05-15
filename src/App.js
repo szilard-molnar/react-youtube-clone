@@ -2,11 +2,16 @@ import React from 'react';
 import { Grid } from '@material-ui/core';
 import youtube from './api/youtube';
 import { SearchBar, VideoDetail, VideoList } from './components';
+const API_KEY = process.env.REACT_APP_YOUTUBE_API_KEY;
 
 class App extends React.Component {
     state = {
         videos: [],
         selectedVideo: null,
+    }
+
+    componentDidMount() {
+        this.handleSubmit('react.js');
     }
 
     onVideoSelect = (video) => {
@@ -18,7 +23,7 @@ class App extends React.Component {
         params: {
             part: 'snippet',
             maxResults: 5,
-            key: 'AIzaSyB3IQu57kKna7JPHCivzBM0iOHbkaUHOVY',
+            key: API_KEY,
             q: searchTerm,
         }
         });
