@@ -2,6 +2,7 @@ import React from 'react';
 import { Grid } from '@material-ui/core';
 import youtube from './api/youtube';
 import { SearchBar, VideoDetail, VideoList } from './components';
+import './App.css';
 const API_KEY = process.env.REACT_APP_YOUTUBE_API_KEY;
 
 class App extends React.Component {
